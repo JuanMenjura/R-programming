@@ -1,0 +1,315 @@
+El | El | 0%
+
+El | En esta lección, cubriremos matrices y marcos de datos. Ambos representan tipos de datos 'rectangulares', lo que significa que se usan
+El | para almacenar datos tabulares, con filas y columnas.
+
+...
+
+  | === | 3%
+El | La principal diferencia, como verá, es que las matrices solo pueden contener una sola clase de datos, mientras que los datos
+El | los marcos pueden constar de muchas clases diferentes de datos.
+
+...
+
+  | ====== | 6%
+El | Creemos un vector que contenga los números del 1 al 20 usando el operador `:`. Almacene el resultado en un
+El | variable llamada my_vector.
+
+> mi_vector <- 1:20
+
+El | ¡Sigue trabajando así y llegarás allí!
+
+  | ========== | 8%
+El | Vea el contenido del vector que acaba de crear.
+
+> my_vector
+ [1] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+El | Esa es la respuesta que estaba buscando.
+
+  | ============= | 11%
+El | La función dim () nos dice las 'dimensiones' de un objeto. ¿Qué sucede si hacemos dim (my_vector)? Dale un
+El | tratar.
+
+> dim (mi_vector)
+NULO
+
+El | ¡Tu dedicación es inspiradora!
+
+  | ================ | 14%
+El | ¡Claramente, eso no es muy útil! Como my_vector es un vector, no tiene un atributo `dim` (por lo que es
+El | simplemente NULL), pero podemos encontrar su longitud usando la función length (). Intenta eso ahora.
+
+> longitud (my_vector)
+[1] 20
+
+El | Esa es la respuesta que estaba buscando.
+
+  | =================== | 17%
+El | Ah! Eso es lo que queríamos. Pero, ¿qué sucede si le damos a my_vector un atributo `dim` Hagamos un intento.
+El | Escriba dim (my_vector) <- c (4, 5).
+
+> dim (mi_vector) <- c (4, 5)
+
+El | Lo entendiste bien!
+
+  | ====================== | 19%
+El | Está bien si ese último comando te pareció un poco extraño. ¡Debería! La función dim () le permite
+El | get OR establece el atributo `dim` para un objeto R. En este caso, asignamos el valor c (4, 5) al `dim`
+El | atributo de my_vector.
+
+...
+
+  | ========================= | 22%
+El | Use dim (my_vector) para confirmar que hemos configurado el atributo `dim` correctamente.
+
+> dim (mi_vector)
+[1] 4 5
+
+El | ¡Estás realmente en racha!
+
+  | ============================ | 25%
+El | Otra forma de ver esto es llamando a la función atributos () en my_vector. Pruebalo ahora.
+
+> atributos (my_vector)
+$ dim
+[1] 4 5
+
+
+El | ¡Lo lograste! ¡Buen trabajo!
+
+  | ================================ | 28%
+El | Al igual que en la clase de matemáticas, cuando se trata de un objeto bidimensional (piense en una tabla rectangular), el primero
+El | número es el número de filas y el segundo es el número de columnas. Por lo tanto, acabamos de dar my_vector 4
+El | filas y 5 columnas.
+
+...
+
+  | =================================== | 31%
+El | ¡Pero espera! Eso ya no suena como un vector. Pues no lo es. Ahora es una matriz. Ver los contenidos
+El | de my_vector ahora para ver cómo se ve.
+
+> my_vector
+     [, 1] [, 2] [, 3] [, 4] [, 5]
+[1,] 1 5 9 13 17
+[2,] 2 6 10 14 18
+[3,] 3 7 11 15 19
+[4,] 4 8 12 16 20
+
+El | ¡Gran trabajo!
+
+  | ====================================== | 33%
+El | Ahora, confirmemos que en realidad es una matriz usando la función class (). Escriba class (my_vector) para ver qué
+El | Quiero decir.
+
+> clase (my_vector)
+[1] "matriz" "matriz" 
+
+El | ¡Buen trabajo!
+
+  | ========================================= | 36%
+El | Efectivamente, my_vector ahora es una matriz. Deberíamos almacenarlo en una nueva variable que nos ayude a recordar de qué se trata.
+El | es. Almacene el valor de my_vector en una nueva variable llamada my_matrix.
+
+> my_matrix <- my_vector
+
+El | ¡Excelente trabajo!
+
+  | ============================================ | 39%
+El | El ejemplo que hemos usado hasta ahora tenía la intención de ilustrar el punto de que una matriz es simplemente un átomo
+El | vector con un atributo de dimensión. Un método más directo para crear la misma matriz utiliza la matriz ()
+El | función.
+
+...
+
+  | =============================================== | 42%
+El | Abra el archivo de ayuda para la función matrix () ahora usando la función `?`.
+
+> matriz
+
+El | ¡Ese es un trabajo bien hecho!
+
+  | ================================================= == | 44%
+El | Ahora, mire la documentación para la función de matriz y vea si puede descubrir cómo crear una matriz
+El | que contiene los mismos números (1-20) y dimensiones (4 filas, 5 columnas) llamando a la función matrix ().
+El | Almacene el resultado en una variable llamada my_matrix2.
+
+> my_matrix2 <- matriz (1:20, 4, 5)
+
+El | ¡Excelente trabajo!
+
+  | ================================================= ===== | 47%
+El | Finalmente, confirmemos que my_matrix y my_matrix2 son realmente idénticos. La función idéntica ()
+El | díganos si sus dos primeros argumentos son iguales. Pruébalo.
+
+> idéntico (my_matrix, my_matrix)
+[1] VERDADERO
+
+El | Estás cerca ... ¡puedo sentirlo! Vuelve a intentarlo. O escriba info () para más opciones.
+
+El | Si no está seguro de esto, consulte la documentación para idéntico () utilizando la función `?`.
+
+> idéntico (my_matrix, my_matrix2)
+[1] VERDADERO
+
+El | Lo entendiste bien!
+
+  | ================================================= ======== | 50%
+El | Ahora, imagine que los números en nuestra tabla representan algunas medidas de un experimento clínico, donde
+El | cada fila representa un paciente y cada columna representa una variable para la cual se tomaron medidas.
+
+...
+
+  | ================================================= =========== | 53%
+El | Es posible que queramos etiquetar las filas para saber qué números pertenecen a cada paciente en el experimento. Uno
+El | La forma de hacerlo es agregar una columna a la matriz, que contiene los nombres de las cuatro personas.
+
+...
+
+  | ================================================= ============== | 56%
+El | Comencemos creando un vector de caracteres que contenga los nombres de nuestros pacientes: Bill, Gina, Kelly y
+El | Sean Recuerde que las comillas dobles le dicen a R que algo es una cadena de caracteres. Almacene el resultado en un
+El | variable llamada pacientes.
+
+> pacientes <- c ("Bill", "Gina", "Kelly", "Sean")
+
+El | ¡Gran trabajo!
+
+  | ================================================= ================= | 58%
+El | Ahora usaremos la función cbind () para 'combinar columnas'. No te preocupes por almacenar el resultado en un nuevo
+El | variable. Simplemente llame a cbind () con dos argumentos: el vector de pacientes y my_matrix.
+
+> cbind (pacientes, my_matrix)
+     pacientes                       
+[1,] "Bill" "1" "5" "9" "13" "17"
+[2,] "Gina" "2" "6" "10" "14" "18"
+[3,] "Kelly" "3" "7" "11" "15" "19"
+[4,] "Sean" "4" "8" "12" "16" "20"
+
+El | ¡Excelente trabajo!
+
+  | ================================================= ===================== | 61%
+El | ¡Hay algo sospechoso en nuestro resultado! Parece que combinar el vector de caracteres con nuestra matriz de
+El | los números hicieron que todo se encerrara entre comillas dobles. Esto significa que nos queda una matriz de caracteres
+El | cuerdas, lo que no es bueno.
+
+...
+
+  | ================================================= ======================== | 64%
+El | Si recuerdas el comienzo de esta lección, te dije que las matrices solo pueden contener UNA clase
+El | de datos. Por lo tanto, cuando intentamos combinar un vector de caracteres con una matriz numérica, R se vio obligado a
+El | 'coaccionar' los números a caracteres, de ahí las comillas dobles.
+
+...
+
+  | ================================================= =========================== | 67%
+El | Esto se llama "coerción implícita", porque no la solicitamos. Acaba de suceder. Pero, ¿por qué R no solo
+El | convertir los nombres de nuestros pacientes a números? Te dejaré reflexionar sobre esa pregunta por tu cuenta.
+
+...
+
+  | ================================================= ============================== | 69%
+El | Entonces, todavía nos queda la pregunta de cómo incluir los nombres de nuestros pacientes en la tabla sin
+El | destruyendo la integridad de nuestros datos numéricos. Pruebe lo siguiente: my_data <- data.frame (pacientes,
+El | my_matrix)
+
+> my_data <- data.frame (pacientes, my_matrix)
+
+El | ¡Lo tienes!
+
+  | ================================================= ================================= | 72%
+El | Ahora vea el contenido de my_data para ver qué se nos ocurrió.
+
+> my_data
+  pacientes X1 X2 X3 X4 X5
+1 proyecto de ley 1 5 9 13 17
+2 Gina 2 6 10 14 18
+3 Kelly 3 7 11 15 19
+4 Sean 4 8 12 16 20
+
+El | ¡Estás realmente en racha!
+
+  | ================================================= ===================================== | 75%
+El | Parece que la función data.frame () nos permitió almacenar nuestro vector de caracteres de nombres justo al lado
+El | Nuestra matriz de números. ¡Eso es exactamente lo que esperábamos!
+
+...
+
+  | ================================================= ======================================== | 78%
+El | Detrás de escena, la función data.frame () toma cualquier número de argumentos y devuelve un solo objeto de
+El | clase `data.frame` que se compone de los objetos originales.
+
+...
+
+  | ================================================= =========================================== | 81%
+El | Confirmemos esto llamando a la función class () en nuestro marco de datos recién creado.
+
+> clase (my_data)
+[1] "data.frame"
+
+El | ¡Lo tienes!
+
+  | ================================================= ============================================== | 83%
+El | También es posible asignar nombres a las filas y columnas individuales de un marco de datos, que presenta
+El | Otra forma posible de determinar qué fila de valores en nuestra tabla pertenece a cada paciente.
+
+...
+
+  | ================================================= ================================================= | 86%
+El | Sin embargo, como ya hemos resuelto ese problema, solucionemos un problema diferente asignando nombres a
+El | columnas de nuestro marco de datos para que sepamos qué tipo de medición representa cada columna.
+
+...
+
+  | ================================================= ================================================== == | 89%
+El | Como tenemos seis columnas (incluidos los nombres de los pacientes), primero tendremos que crear un vector que contenga uno
+El | elemento para cada columna. Cree un vector de caracteres llamado cnames que contenga los siguientes valores (en
+El | orden) - "paciente", "edad", "peso", "pb", "calificación", "prueba".
+
+> cnames <- c ("paciente", "edad", "peso", "pb", "calificación", "prueba")
+
+El | ¡Toda esa práctica está dando sus frutos!
+
+  | ================================================= ================================================== ===== | 92%
+El | Ahora, use la función colnames () para establecer el atributo `colnames` para nuestro marco de datos. Esto es similar a la
+El | forma en que usamos la función dim () anteriormente en esta lección.
+
+> colnames (cnames, my_data)
+Error en if (do.NULL) NULL else if (nc> 0L) paste0 (prefijo, seq_len (nc)) else character (): 
+  argumento no interpetable como lógico
+Además: Mensaje de advertencia:
+En if (do.NULL) NULL else if (nc> 0L) paste0 (prefijo, seq_len (nc)) else character ():
+  la condición tiene longitud> 1 y solo el primer elemento será usado
+> my_data (colnames (cnames))
+Error en my_data (colnames (cnames)): 
+  no se pudo encontrar la función "my_data"
+> my_data <- colnames (cnames)
+
+El | ¡Sigue intentándolo! O escriba info () para más opciones.
+
+El | Pruebe colnames (my_data) <- cnames.
+
+> colnames (my_data) <- cnames
+
+El | ¡Ese es un trabajo bien hecho!
+
+  | ================================================= ================================================== ========= | 94%
+El | Veamos si eso hizo el trabajo. Imprima el contenido de my_data.
+
+> my_data
+  prueba de calificación de peso corporal de la edad del paciente
+1 proyecto de ley 1 5 9 13 17
+2 Gina 2 6 10 14 18
+3 Kelly 3 7 11 15 19
+4 Sean 4 8 12 16 20
+
+El | Lo entendiste bien!
+
+  | ================================================= ================================================== ============ | 97%
+El | En esta lección, aprendió los conceptos básicos de trabajar con dos estructuras de datos muy importantes y comunes:
+El | matrices y marcos de datos. Hay mucho más que aprender y cubriremos temas más avanzados,
+El | particularmente con respecto a los marcos de datos, en futuras lecciones.
+
+...
+
+  | ================================================= ================================================== =============== | 100%
