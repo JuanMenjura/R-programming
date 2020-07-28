@@ -1,0 +1,191 @@
+El | El | 0%
+
+El | En esta lección, aprenderá a crear secuencias de números en R.
+
+...
+
+  | ======== | 4%
+El | La forma más sencilla de crear una secuencia de números en R es usar el operador `:`. Escriba 1:20 para ver cómo funciona.
+
+> 1:20
+ [1] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+El | Perseverancia, esa es la respuesta.
+
+  | ================ | 9%
+El | Eso nos dio todos los enteros entre (e incluidos) 1 y 20. También podríamos usarlo para crear una secuencia de
+El | numeros reales. Por ejemplo, prueba pi: 10.
+
+> pi: 10
+[1] 3.141593 4.141593 5.141593 6.141593 7.141593 8.141593 9.141593
+
+El | ¡Lo tienes!
+
+  | ======================== | 13%
+El | El resultado es un vector de números reales que comienza con pi (3.142 ...) y aumenta en incrementos de 1. El
+El | nunca se alcanza el límite superior de 10, ya que el siguiente número en nuestra secuencia sería mayor que 10.
+
+...
+
+  | ================================ | 17%
+El | ¿Qué pasa si hacemos 15: 1? Pruébalo para descubrirlo.
+
+> 15: 1
+ [1] 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
+
+El | ¡Excelente trabajo!
+
+  | ======================================== | 22%
+El | ¡Contaba al revés en incrementos de 1! Es poco probable que queramos este comportamiento, pero no obstante es bueno.
+El | para saber cómo podría suceder.
+
+...
+
+  | =============================================== | 26%
+El | Recuerde que si tiene preguntas sobre una función R particular, puede acceder a su documentación con un
+El | signo de interrogación seguido del nombre de la función:? nombre_función_aquí. Sin embargo, en el caso de un operador como
+El | con los dos puntos utilizados anteriormente, debe encerrar el símbolo en comillas como esta:? `:`. (NOTA: la tecla de retroceso (`)
+El | generalmente se encuentra en la esquina superior izquierda de un teclado, encima de la tecla Tab. Si no tienes un backtick
+El | clave, puede usar comillas regulares).
+
+...
+
+  | ================================================= ====== | 30%
+El | Abra la documentación para `:` ahora.
+
+>:
+Error: inesperado ':' en ":"
+>? function_name_her '
++ 
++ ''
+Error: cadena inesperada constante en:
+"
+'"
+>? function_name_her ':'
+Error: cadena inesperada constante en "? Function_name_her ':'"
+>? ':'
+
+El | ¡Usted está haciendo tan bien!
+
+  | ================================================= ============== | 35%
+El | A menudo, desearemos más control sobre una secuencia que estamos creando que lo que nos proporciona el operador `:`. los
+El | La función seq () sirve para este propósito.
+
+...
+
+  | ================================================= ====================== | 39%
+El | El uso más básico de seq () hace exactamente lo mismo que el operador `:`. Pruebe la secuencia (1, 20) para ver esto.
+
+> seq (1,20)
+ [1] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+El | ¡Excelente trabajo!
+
+  | ================================================= ============================== | 43%
+El | Esto nos da la misma salida que 1:20. Sin embargo, digamos que en su lugar queremos un vector de números que varíen
+El | de 0 a 10, incrementado en 0.5. seq (0, 10, by = 0.5) hace exactamente eso. Pruébalo.
+
+> seq (0, 10, por = 0.5)
+ [1] 0.0 0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5 8.0 8.5 9.0 9.5 10.0
+
+El | ¡Mantener el buen trabajo!
+
+  | ================================================= ====================================== | 48%
+El | O tal vez no nos importa cuál es el incremento y solo queremos una secuencia de 30 números entre 5 y 10.
+El | seq (5, 10, longitud = 30) hace el truco. Pruébalo ahora y almacena el resultado en una nueva variable llamada
+El | my_seq.
+
+> my_seq <- seq (5, 10, longitud = 30
++)
+
+El | ¡Lo tienes!
+
+  | ================================================= ============================================== | 52%
+El | Para confirmar que my_seq tiene una longitud 30, podemos usar la función length (). Pruebalo ahora.
+
+> longitud (my_seq)
+[1] 30
+
+El | ¡Buen trabajo!
+
+  | ================================================= ================================================== ==== | 57%
+El | Supongamos que no conocemos la longitud de my_seq, pero queremos generar una secuencia de enteros de 1 a
+El | N, donde N representa la longitud del vector my_seq. En otras palabras, queremos un nuevo vector (1, 2, 3, ...)
+El | esa es la misma longitud que my_seq.
+
+...
+
+  | ================================================= ================================================== ============ | 61%
+El | Hay varias formas en que podríamos hacer esto. Una posibilidad es combinar el operador `:` y la longitud ()
+El | funciona así: 1: longitud (my_seq). Pruébalo
+
+> 1: longitud (my_seq)
+ [1] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+
+El | ¡Lo tienes!
+
+  | ================================================= ================================================== ==================== | sesenta y cinco%
+El | Otra opción es usar seq (along.with = my_seq). Pruébalo
+
+> seq (junto.con = my_seq)
+ [1] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+
+El | ¡Eres la mejor!
+
+  | ================================================= ================================================== ============================ | 70%
+El | Sin embargo, como es el caso con muchas tareas comunes, R tiene una función incorporada separada para este propósito llamada
+El | seq_along (). Escriba seq_along (my_seq) para verlo en acción.
+
+> seq_along (my_seq)
+ [1] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+
+El | ¡Buen trabajo!
+
+  | ================================================= ================================================== ==================================== | 74%
+El | A menudo hay varios enfoques para resolver el mismo problema, particularmente en R. Enfoques simples que
+El | implican menos escribir son generalmente mejores. También es importante que su código sea legible, para que usted y
+El | otros pueden darse cuenta de lo que está sucediendo sin demasiados problemas.
+
+...
+
+  | ================================================= ================================================== =========================================== | 78%
+El | Si R tiene una función incorporada para una tarea en particular, es probable que la función esté altamente optimizada para eso
+El | Propósito y es tu mejor opción. A medida que te conviertas en un programador R más avanzado, diseñarás tu propio
+El | funciones para realizar tareas cuando no hay mejores opciones. Exploraremos escribir sus propias funciones en
+El | Lecciones futuras.
+
+...}
+
+  | ================================================= ================================================== ================================================== = | 83%
+El | Una función más relacionada con la creación de secuencias de números es rep (), que significa 'replicar'. Vamos
+El | Mira algunos usos.
+
+...
+
+  | ================================================= ================================================== ================================================== ========= | 87%
+El | Si estamos interesados ​​en crear un vector que contenga 40 ceros, podemos usar rep (0, veces = 40). Pruébalo.
+
+> 
+> rep (0, veces = 40)
+ [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+El | ¡Tu dedicación es inspiradora!
+
+  | ================================================= ================================================== ================================================== ================= | 91%
+El | Si, en cambio, queremos que nuestro vector contenga 10 repeticiones del vector (0, 1, 2), podemos hacer rep (c (0, 1, 2),
+El | veces = 10). Adelante.
+
+> rep (c (0, 1, 2), veces = 10)
+ [1] 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2
+
+El | Perseverancia, esa es la respuesta.
+
+  | ================================================= ================================================== ================================================== ========================= | 96%
+El | Finalmente, digamos que en lugar de repetir el vector (0, 1, 2) una y otra vez, queremos nuestro vector
+El | para contener 10 ceros, luego 10 unos, luego 10 dos. Podemos hacer esto con el argumento `each`. Prueba rep (c (0, 1,
+El | 2), cada uno = 10).
+
+> rep (c (0, 1, 2), cada uno = 10)
+ [1] 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2
+
+El | ¡Eres la mejor!
