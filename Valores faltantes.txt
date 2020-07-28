@@ -1,0 +1,190 @@
+El | El | 0%
+
+El | Los valores perdidos juegan un papel importante en las estadísticas y el análisis de datos. A menudo, los valores faltantes no deben ser
+El | ignorado, sino que deben estudiarse cuidadosamente para ver si hay un patrón subyacente o causa de
+El | su falta
+
+...
+
+  | ===== | 5%
+El | En R, NA se usa para representar cualquier valor que 'no está disponible' o 'falta' (en el sentido estadístico). En
+El | En esta lección, exploraremos más los valores faltantes.
+
+...
+
+  | ========== | 10%
+El | Cualquier operación que involucra NA generalmente produce NA como resultado. Para ilustrar, creemos un vector c (44,
+El | NA, 5, NA) y asígnelo a una variable x.
+
+> x <- c (44, NA, 5, NA)
+
+El | ¡Lo lograste! ¡Buen trabajo!
+
+  | =============== | 15%
+El | Ahora, multipliquemos x por 3.
+
+> X * 3
+Error: objeto 'X' no encontrado
+> x * 3
+[1] 132 NA 15 NA
+
+El | ¡Tu dedicación es inspiradora!
+
+  | ==================== | 20%
+El | Observe que los elementos del vector resultante que se corresponden con los valores de NA en x también son NA.
+
+...
+
+  | ========================= | 25%
+El | Para hacer las cosas un poco más interesantes, creemos un vector que contenga 1000 dibujos de un estándar normal
+El | distribución con y <- rnorm (1000).
+
+> y <- tormenta (1000)
+
+El | ¡Eso es correcto!
+
+  | ============================== | 30%
+El | A continuación, creemos un vector que contenga 1000 NA con z <- rep (NA, 1000).
+
+> z <- rep (NA, 1000)
+
+El | ¡Sigue trabajando así y llegarás allí!
+
+  | =================================== | 35%
+El | Finalmente, seleccionemos 100 elementos al azar de estos valores de 2000 (combinando y y z) de modo que no
+El | saber con cuántas NA terminaremos o qué posiciones ocuparán en nuestro vector final - my_data <-
+El | muestra (c (y, z), 100).
+
+> my_data <- muestra (c (y, z), 100)
+
+El | ¡Eres la mejor!
+
+  | ======================================== | 40%
+El | Primero hagamos la pregunta de dónde están ubicadas nuestras NA en nuestros datos. La función is.na () nos dice
+El | si cada elemento de un vector es NA. Llame a is.na () en my_data y asigne el resultado a my_na.
+
+> my_na <- is.na (my_data)
+
+El | ¡Mantener el buen trabajo!
+
+  | ============================================= | 45%
+El | Ahora, imprima my_na para ver qué se le ocurrió.
+
+> my_na
+  [1] FALSO VERDADERO FALSO VERDADERO VERDADERO FALSO FALSO FALSO VERDADERO VERDADERO FALSO FALSO VERDADERO FALSO FALSO VERDADERO VERDADERO
+ [18] VERDADERO VERDADERO FALSO FALSO VERDADERO VERDADERO FALSO VERDADERO FALSO FALSO FALSO FALSO FALSO FALSO VERDADERO VERDADERO
+ [35] VERDADERO VERDADERO VERDADERO FALSO FALSO FALSO VERDADERO VERDADERO FALSO VERDADERO VERDADERO FALSO VERDADERO FALSO VERDADERO FALSO
+ [52] VERDADERO FALSO VERDADERO VERDADERO FALSO VERDADERO VERDADERO FALSO VERDADERO VERDADERO VERDADERO VERDADERO VERDADERO FALSO VERDADERO
+ [69] VERDADERO VERDADERO FALSO FALSO VERDADERO VERDADERO VERDADERO VERDADERO VERDADERO FALSO FALSO FALSO VERDADERO FALSO FALSO
+ [86] VERDADERO VERDADERO VERDADERO VERDADERO FALSO VERDADERO FALSO VERDADERO FALSO VERDADERO VERDADERO VERDADERO FALSO
+
+El | ¡Mantener el buen trabajo!
+
+  | ================================================= = | 50%
+El | Donde quiera que vea un VERDADERO, sabrá que el elemento correspondiente de my_data es NA. Del mismo modo, en todas partes
+El | vea un FALSO, sabe que el elemento correspondiente de my_data es uno de nuestros sorteos aleatorios del estándar
+El | distribución normal.
+
+...
+
+  | ================================================= ====== | 55%
+El | En nuestra discusión anterior sobre operadores lógicos, presentamos el operador `==` como método de prueba para
+El | igualdad entre dos objetos. Entonces, puede pensar que la expresión my_data == NA produce los mismos resultados que
+El | is.na (). Darle una oportunidad.
+
+> my_na == NA
+  [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+ [36] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+ [71] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+
+El | Esa no es la respuesta que estaba buscando, pero intente nuevamente. O escriba info () para más opciones.
+
+El | Pruebe my_data == NA para ver qué sucede.
+
+> my_data == NA
+  [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+ [36] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+ [71] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+
+El | ¡Usted está haciendo tan bien!
+
+  | ================================================= =========== | 60%
+El | La razón por la que obtuvo un vector de todas las NA es que NA no es realmente un valor, sino solo un marcador de posición para un
+El | Cantidad que no está disponible. Por lo tanto, la expresión lógica es incompleta y R no tiene más remedio que
+El | devuelve un vector de la misma longitud que my_data que contiene todos los NA.
+
+...
+
+  | ================================================= ================ | sesenta y cinco%
+El | No te preocupes si eso es un poco confuso. La conclusión clave es ser cauteloso al usar expresiones lógicas
+El | cada vez que los NA pueden colarse, ya que un solo valor de NA puede descarrilar todo.
+
+...
+
+  | ================================================= ===================== | 70%
+El | Entonces, volvamos a la tarea en cuestión. Ahora que tenemos un vector, my_na, que tiene un VERDADERO para cada NA y FALSO para
+El | Con cada valor numérico, podemos calcular el número total de NA en nuestros datos.
+
+...
+
+  | ================================================= ========================== | 75%
+El | El truco es reconocer que debajo de la superficie, R representa VERDADERO como el número 1 y FALSO como el
+El | número 0. Por lo tanto, si tomamos la suma de un grupo de VERDADEROS y FALSES, obtenemos el número total de VERDADEROS.
+
+...
+
+  | ================================================= =============================== | 80%
+El | Vamos a intentarlo aquí. Llame a la función sum () en my_na para contar el número total de VERDADEROS en my_na,
+El | y, por lo tanto, el número total de NA en my_data. No asigne el resultado a una nueva variable.
+
+> sum (my_na)
+[1] 60
+
+El | ¡Eres fabuloso!
+
+  | ================================================= ==================================== | 85%
+El | Muy bien, ¿eh? Finalmente, echemos un vistazo a los datos para convencernos de que todo 'se suma'.
+El | Imprima my_data en la consola.
+
+> my_data
+  [1] -1.181220260 NA -1.606230137 NA NA -0.965721326 -0.250974714 -0.676196925
+  [9] NA NA 1.755128623 -1.088975006 NA 0.012998561 -1.409352139 NA
+ [17] NA NA NA 0.837262587 0.286386703 NA NA 0.913506617
+ [25] NA NA -0.342926155 -0.475484734 -0.492300395 0.783869060 0.000208002 0.029495965
+ [33] NA NA NA NA NA -0.325548870 -1.436324985 0.085875139
+ [41] NA NA -1.600618814 NA NA NA 2.158313433 NA
+ [49] -0.151496148 NA -0.016782629 NA 1.209054992 NA NA NA
+ [57] -0.809232978 NA NA -1.040646567 NA NA NA NA
+ [65] NA NA -0.058562150 NA NA NA 1.402951688 0.645186727
+ [73] NA NA NA NA NA NA NA -0.730231771
+ [81] 0.150711935 0.344752709 NA 0.545964278 1.394751364 NA NA NA
+ [89] NA NA -0.310535925 NA 1.425065600 NA -0.340723332 NA
+ [97] NA NA NA 0.041080399
+
+El | ¡Buen trabajo!
+
+  | ================================================= ========================================= | 90%
+El | Ahora que tenemos NAs abajo, veamos un segundo tipo de valor faltante: NaN, que significa 'no
+El | un número'. Para generar NaN, intente dividir (usando una barra diagonal) 0 por 0 ahora.
+
+> 5/0
+[1] Inf
+
+El | No del todo bien, pero sigue intentándolo. O escriba info () para más opciones.
+
+El | Prueba 0/0.
+
+> 0/0
+[1] NaN
+
+El | ¡Estás realmente en racha!
+
+  | ================================================= ============================================== | 95%
+El | Hagamos uno más, solo por diversión. En R, Inf significa infinito. ¿Qué sucede si resta Inf de Inf?
+
+> Inf - Inf
+[1] NaN
+
+El | ¡Gran trabajo!
+
+  | ================================================= ================================================== = | 100%
