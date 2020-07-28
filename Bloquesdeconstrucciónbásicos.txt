@@ -1,0 +1,491 @@
+  | ====== | 5%
+El | En su forma más simple, R puede usarse como una calculadora interactiva. Escriba 5 + 7 y presione Entrar.
+
+> 5 + 7
+[1] 12
+
+El | ¡Estás realmente en racha!
+
+  | ======== | 8%
+El | R simplemente imprime el resultado de 12 por defecto. Sin embargo, R es un lenguaje de programación y, a menudo, la razón por la que usamos una programación
+El | El lenguaje en lugar de una calculadora es automatizar algún proceso o evitar repeticiones innecesarias.
+
+...
+
+  | =========== | 11%
+El | En este caso, es posible que queramos usar nuestro resultado de arriba en un segundo cálculo. En lugar de volver a escribir 5 + 7
+El | Cada vez que lo necesitamos, podemos crear una nueva variable que almacena el resultado.
+
+...
+
+  | ============== | 13%
+El | La forma de asignar un valor a una variable en R es mediante el uso del operador de asignación, que es solo un 'menos
+El | que 'símbolo seguido de un signo' menos '. Se ve así: <-
+
+...
+
+  | ================= | dieciséis%
+El | Piense en el operador de asignación como una flecha. Está asignando el valor en el lado derecho de la flecha a
+El | El nombre de la variable en el lado izquierdo de la flecha.
+
+...
+
+  | ==================== | 18%
+El | Para asignar el resultado de 5 + 7 a una nueva variable llamada x, escriba x <- 5 + 7. Esto se puede leer como 'x gets
+El | 5 más 7 '. Pruébalo ahora.
+
+> x <- 5 + 7
+
+El | ¡Estás realmente en racha!
+
+  | ====================== | 21%
+El | Notarás que R no imprimió el resultado de 12 esta vez. Cuando usa el operador de asignación, R
+El | supone que no desea ver el resultado inmediatamente, sino que tiene la intención de utilizar el resultado para
+El | algo más después.
+
+...
+
+  | ========================= | 24%
+El | Para ver el contenido de la variable x, simplemente escriba x y presione Entrar. Pruebalo ahora.
+
+> x
+[1] 12
+
+El | ¡Tu dedicación es inspiradora!
+
+  | ============================ | 26%
+El | Ahora, almacene el resultado de x - 3 en una nueva variable llamada y.
+
+> 
+> x - 3
+[1] 9
+
+El | Una vez más. ¡Puedes hacerlo! O escriba info () para más opciones.
+
+El | Escriba y <- x - 3 y presione Entrar. Si usa x - 3 o x-3 es una preferencia personal, pero es un buen hábito
+El | para incluir un espacio a cada lado del operador de asignación.
+
+> 
+> y <- x - 3
+
+El | ¡Mantener el buen trabajo!
+
+  | =============================== | 29%
+El | ¿Cuál es el valor de y? Escriba y para averiguarlo.
+
+> y
+[1] 9
+
+El | ¡Eres la mejor!
+
+  | ================================= | 32%
+El | Ahora, creemos una pequeña colección de números llamada vector. Cualquier objeto que contiene datos se llama un
+El | La estructura de datos y los vectores numéricos son el tipo más simple de estructura de datos en R. De hecho, incluso un solo
+El | número se considera un vector de longitud uno.
+
+...
+
+  | ==================================== | 34%
+El | La forma más fácil de crear un vector es con la función c (), que significa 'concatenar' o 'combinar'.
+El | Para crear un vector que contenga los números 1.1, 9 y 3.14, escriba c (1.1, 9, 3.14). Pruébelo ahora y almacene el
+El | dar como resultado una variable llamada z.
+
+> z <- c (1.1, 9, 3.14)
+
+El | ¡Gran trabajo!
+
+  | ======================================= | 37%
+El | Cada vez que tenga preguntas sobre una función en particular, puede acceder a los archivos de ayuda integrados de R a través de `?`
+El | mando. Por ejemplo, si desea obtener más información sobre la función c (), escriba? C sin los paréntesis
+El | que normalmente siguen al nombre de una función. Darle una oportunidad.
+
+> C
+función (objeto, contr, how.many, ...) 
+{
+    if (isFALSE (as.logical (Sys.getenv ("_ R_OPTIONS_STRINGS_AS_FACTORS_")))) 
+        object <- as.factor (objeto)
+    if (! nlevels (objeto)) 
+        stop ("objeto no interpretable como factor")
+    if (! missing (contr) && is.name (Xcontr <- sustituto (contr))) 
+        contr <- switch (como.caracter (Xcontr), poly = "contr.poly", 
+            helmert = "contr.helmert", sum = "contr.sum", 
+            tratamiento = "contr.tratamiento", SAS = "contr.SAS", 
+            contr)
+    if (falta (contr)) {
+        oc <- getOption ("contrastes")
+        contr <- if (longitud (oc) <2L) 
+            if (se ordena (objeto)) 
+                contr.poly
+            si no contr.tratamiento
+        else oc [1 + is.ordered (objeto)]
+    }
+    if (missing (how.many) && missing (...)) 
+        contrastes (objeto) <- contr
+    más {
+        if (es.caracter (contr)) 
+            contr <- get (contr, mode = "function")
+        if (es.función (contr)) 
+            contr <- contr (nlevels (objeto), ...)
+        contrastes (objeto, how.many) <- contr
+    }
+    objeto
+}
+<bytecode: 0x0000017a2432feb0>
+<entorno: espacio de nombres: estadísticas>
+
+El | No exactamente. Dale otra oportunidad. O escriba info () para más opciones.
+
+El | Escriba? C y presione Entrar. Esto abrirá el archivo de ayuda para la función c ().
+
+> c ()
+NULO
+
+El | Casi lo tienes, pero no del todo. Inténtalo de nuevo. O escriba info () para más opciones.
+
+El | Escriba? C y presione Entrar. Esto abrirá el archivo de ayuda para la función c ().
+
+> C
+función (objeto, contr, how.many, ...) 
+{
+    if (isFALSE (as.logical (Sys.getenv ("_ R_OPTIONS_STRINGS_AS_FACTORS_")))) 
+        object <- as.factor (objeto)
+    if (! nlevels (objeto)) 
+        stop ("objeto no interpretable como factor")
+    if (! missing (contr) && is.name (Xcontr <- sustituto (contr))) 
+        contr <- switch (como.caracter (Xcontr), poly = "contr.poly", 
+            helmert = "contr.helmert", sum = "contr.sum", 
+            tratamiento = "contr.tratamiento", SAS = "contr.SAS", 
+            contr)
+    if (falta (contr)) {
+        oc <- getOption ("contrastes")
+        contr <- if (longitud (oc) <2L) 
+            if (se ordena (objeto)) 
+                contr.poly
+            si no contr.tratamiento
+        else oc [1 + is.ordered (objeto)]
+    }
+    if (missing (how.many) && missing (...)) 
+        contrastes (objeto) <- contr
+    más {
+        if (es.caracter (contr)) 
+            contr <- get (contr, mode = "function")
+        if (es.función (contr)) 
+            contr <- contr (nlevels (objeto), ...)
+        contrastes (objeto, how.many) <- contr
+    }
+    objeto
+}
+<bytecode: 0x0000017a2432feb0>
+<entorno: espacio de nombres: estadísticas>
+
+El | Buen intento, pero eso no es exactamente lo que esperaba. Inténtalo de nuevo. O escriba info () para más opciones.
+
+El | Escriba? C y presione Entrar. Esto abrirá el archivo de ayuda para la función c ().
+
+> c
+función (...) .Primitivo ("c")
+
+El | Buen intento, pero eso no es exactamente lo que esperaba. Inténtalo de nuevo. O escriba info () para más opciones.
+
+El | Escriba? C y presione Entrar. Esto abrirá el archivo de ayuda para la función c ().
+
+> info ()
+
+El | Cuando esté en el indicador R (>):
+El | - Escribir skip () le permite omitir la pregunta actual.
+El | - Typing play () te permite experimentar con R por tu cuenta; remolino ignorará lo que haces ...
+El | - HASTA que escriba nxt () que recuperará la atención del remolino.
+El | - Escribir bye () hace que el remolino salga. Tu progreso será guardado.
+El | - Escribir main () te regresa al menú principal de remolino.
+El | - Escribir información () muestra estas opciones nuevamente.
+
+> c ()
+NULO
+
+El | Estás cerca ... ¡puedo sentirlo! Vuelve a intentarlo. O escriba info () para más opciones.
+
+El | Escriba? C y presione Entrar. Esto abrirá el archivo de ayuda para la función c ().
+
+>? c
+
+El | ¡Eres la mejor!
+
+  | ========================================== | 39%
+El | Escriba z para ver su contenido. Observe que no hay comas que separen los valores en la salida.
+
+> 
+> z
+[1] 1.10 9.00 3.14
+
+El | Eres bastante bueno mi amigo!
+
+  | ============================================= | 42%
+El | Puede combinar vectores para hacer un nuevo vector. Cree un nuevo vector que contenga z, 555, luego z nuevamente en
+El | ese orden No asigne este vector a una nueva variable, para que podamos ver el resultado inmediatamente.
+
+> c (z, 555, z)
+[1] 1.10 9.00 3.14 555.00 1.10 9.00 3.14
+
+El | Eres bastante bueno mi amigo!
+
+  | =============================================== | 45%
+El | Los vectores numéricos se pueden usar en expresiones aritméticas. Escriba lo siguiente para ver qué sucede: z * 2 + 100.
+
+> z * 2 + 100
+[1] 102.20 118.00 106.28
+
+El | ¡Todo ese trabajo duro está dando sus frutos!
+
+  | ================================================= = | 47%
+El | Primero, R multiplicó cada uno de los tres elementos en z por 2. Luego agregó 100 a cada elemento para obtener el
+El | resultado que ves arriba.
+
+...
+
+  | ================================================= ==== | 50%
+El | Otros operadores aritméticos comunes son `+`, `-`,` / `y` ^ `(donde x ^ 2 significa 'x al cuadrado'). Tomar el
+El | raíz cuadrada, use la función sqrt () y para tomar el valor absoluto, use la función abs ().
+
+...
+
+  | ================================================= ======= | 53%
+El | Tome la raíz cuadrada de z - 1 y asígnela a una nueva variable llamada my_sqrt.
+
+> my_sqrt <- c (z - 1) ^ 2
+
+El | Una vez más. ¡Puedes hacerlo! O escriba info () para más opciones.
+
+El | Asigne el resultado de sqrt (z - 1) a una variable llamada my_sqrt.
+
+> my_sqrt <- sqrt (z - 1)
+
+El | ¡Eso es correcto!
+
+  | ================================================= ========== | 55%
+El | Antes de ver el contenido de la variable my_sqrt, ¿qué crees que contiene?
+
+1: un vector de longitud 3
+2: un solo número (es decir, un vector de longitud 1)
+3: un vector de longitud 0 (es decir, un vector vacío)
+
+Selección: 2
+
+El | ¡Sigue intentándolo!
+
+El | Piense en cómo R manejó las otras operaciones 'vectorizadas': elemento por elemento.
+
+1: un solo número (es decir, un vector de longitud 1)
+2: un vector de longitud 0 (es decir, un vector vacío)
+3: un vector de longitud 3
+
+Selección: 
+Ingrese un elemento del menú o 0 para salir
+Selección: 2
+
+El | No exactamente. Dale otra oportunidad.
+
+El | Piense en cómo R manejó las otras operaciones 'vectorizadas': elemento por elemento.
+
+1: un vector de longitud 3
+2: un vector de longitud 0 (es decir, un vector vacío)
+3: un solo número (es decir, un vector de longitud 1)
+
+Selección: 2
+
+El | ¡No exactamente! Inténtalo de nuevo.
+
+El | Piense en cómo R manejó las otras operaciones 'vectorizadas': elemento por elemento.
+
+1: un vector de longitud 0 (es decir, un vector vacío)
+2: un vector de longitud 3
+3: un solo número (es decir, un vector de longitud 1)
+
+Selección: 3
+
+El | Inténtalo de nuevo. ¡Hacerlo bien en el primer intento es aburrido de todos modos!
+
+El | Piense en cómo R manejó las otras operaciones 'vectorizadas': elemento por elemento.
+
+1: un vector de longitud 3
+2: un solo número (es decir, un vector de longitud 1)
+3: un vector de longitud 0 (es decir, un vector vacío)
+
+Selección: 2
+
+El | Una vez más. ¡Puedes hacerlo!
+
+El | Piense en cómo R manejó las otras operaciones 'vectorizadas': elemento por elemento.
+
+1: un vector de longitud 3
+2: un solo número (es decir, un vector de longitud 1)
+3: un vector de longitud 0 (es decir, un vector vacío)
+
+Selección: 2
+
+El | Casi lo tienes, pero no del todo. Inténtalo de nuevo.
+
+El | Piense en cómo R manejó las otras operaciones 'vectorizadas': elemento por elemento.
+
+1: un vector de longitud 3
+2: un solo número (es decir, un vector de longitud 1)
+3: un vector de longitud 0 (es decir, un vector vacío)
+
+Selección: 2
+
+El | No del todo, ¡pero estás aprendiendo! Inténtalo de nuevo.
+
+El | Piense en cómo R manejó las otras operaciones 'vectorizadas': elemento por elemento.
+
+1: un vector de longitud 0 (es decir, un vector vacío)
+2: un solo número (es decir, un vector de longitud 1)
+3: un vector de longitud 3
+
+Selección: 1
+
+El | Pruébalo de nuevo.
+
+El | Piense en cómo R manejó las otras operaciones 'vectorizadas': elemento por elemento.
+
+1: un solo número (es decir, un vector de longitud 1)
+2: un vector de longitud 3
+3: un vector de longitud 0 (es decir, un vector vacío)
+
+Selección: 2
+
+El | ¡Todo ese trabajo duro está dando sus frutos!
+
+  | ================================================= ============ | 58%
+El | Imprima el contenido de my_sqrt.
+
+> my_sqrt
+[1] 0.3162278 2.8284271 1.4628739
+
+El | ¡Eso es correcto!
+
+  | ================================================= =============== | 61%
+El | Como habrás adivinado, R primero restó 1 de cada elemento de z, luego tomó la raíz cuadrada de cada
+El | elemento. Esto te deja con un vector de la misma longitud que el vector original z.
+
+...
+
+  | ================================================= ================== | 63%
+El | Ahora, cree una nueva variable llamada my_div que obtenga el valor de z dividido por my_sqrt.
+
+> 
+> my_div <- z / my_sqrt
+
+El | Lo entendiste bien!
+
+  | ================================================= ===================== | 66%
+El | ¿Qué afirmación crees que es verdad?
+
+1: my_div no está definido
+2: my_div es un número único (es decir, un vector de longitud 1)
+3: El primer elemento de my_div es igual al primer elemento de z dividido por el primer elemento de my_sqrt, y así sucesivamente ...
+
+Selección: 3
+
+El | Eres bastante bueno mi amigo!
+
+  | ================================================= ======================== | 68%
+El | Continúe e imprima el contenido de my_div.
+
+> my_div
+[1] 3.478505 3.181981 2.146460
+
+El | ¡Usted está haciendo tan bien!
+
+  | ================================================= ========================== | 71%
+El | Cuando se le dan dos vectores de la misma longitud, R simplemente realiza la operación aritmética especificada (`+`, `-`,
+El | `*`, etc.) elemento por elemento. Si los vectores son de diferentes longitudes, R 'recicla' el vector más corto
+El | hasta que tenga la misma longitud que el vector más largo.
+
+...
+
+  | ================================================= ============================= | 74%
+El | Cuando hicimos z * 2 + 100 en nuestro ejemplo anterior, z era un vector de longitud 3, pero técnicamente 2 y 100 son
+El | cada vector de longitud 1.
+
+...
+
+  | ================================================= ================================ | 76%
+El | Detrás de escena, R está 'reciclando' el 2 para hacer un vector de 2 y el 100 para hacer un vector de 100. En
+El | En otras palabras, cuando le pides a R que calcule z * 2 + 100, lo que realmente calcula es esto: z * c (2, 2, 2) +
+El | c (100, 100, 100).
+
+...
+
+  | ================================================= =================================== | 79%
+El | Para ver otro ejemplo de cómo funciona este 'reciclaje' de vectores, intente agregar c (1, 2, 3, 4) yc (0, 10). No
+El | preocuparse por guardar el resultado en una nueva variable.
+
+> c (1,2,3,4)
+[1] 1 2 3 4
+
+El | ¡Sigue intentándolo! O escriba info () para más opciones.
+
+El | Ingrese c (1, 2, 3, 4) + c (0, 10) en la consola para ver cómo R agrega dos vectores de diferente longitud. No
+El | Asignar el resultado a una variable.
+
+> c (1,2,3,4) + c (0,10)
+[1] 1 12 3 14
+
+El | ¡Todo ese trabajo duro está dando sus frutos!
+
+  | ================================================= ===================================== | 82%
+El | Si la longitud del vector más corto no se divide uniformemente en la longitud del vector más largo, R lo hará
+El | aún aplica el método de 'reciclaje', pero lanzará una advertencia para hacerle saber que algo sospechoso podría estar sucediendo
+El | en.
+
+...
+
+  | ================================================= ======================================== | 84%
+El | Pruebe c (1, 2, 3, 4) + c (0, 10, 100) como ejemplo.
+
+> c (1,2,3,4) + c (0,10,100)
+[1] 1 12 103 4
+Mensaje de advertencia:
+En c (1, 2, 3, 4) + c (0, 10, 100):
+  longitud de objeto mayor no es múltiplo de la longitud de uno menor
+
+El | ¡Toda esa práctica está dando sus frutos!
+
+  | ================================================= =========================================== | 87%
+El | Antes de concluir esta lección, me gustaría mostrarle un par de trucos para ahorrar tiempo.
+
+...
+
+  | ================================================= ============================================== | 89%
+El | Al principio de la lección, calculó z * 2 + 100. Supongamos que cometió un error y que quiso decir
+El | para agregar 1000 en lugar de 100. Puede volver a escribir la expresión o ...
+
+...
+
+  | ================================================= ================================================= | 92%
+El | En muchos entornos de programación, la flecha hacia arriba recorrerá los comandos anteriores. Intenta golpear
+El | flecha en su teclado hasta llegar a este comando (z * 2 + 100), luego cambie 100 a 1000 y presione Enter.
+El | Si la flecha hacia arriba no funciona para usted, simplemente escriba el comando corregido.
+
+> z * 2 + 1000
+[1] 1002.20 1018.00 1006.28
+
+El | ¡Estás realmente en racha!
+
+  | ================================================= ================================================== = | 95%
+El | Finalmente, imaginemos que desea ver el contenido de una variable que creó anteriormente, pero usted
+El | Parece que no puedo recordar si lo llamaste my_div o myDiv. Podrías probar ambos y ver qué funciona, o ...
+
+... my_div
+
+  | ================================================= ================================================== ==== | 97%
+El | Puede escribir las dos primeras letras del nombre de la variable y luego presionar la tecla Tab (posiblemente más de una vez).
+El | La mayoría de los entornos de programación proporcionarán una lista de variables que ha creado que comienzan con 'my'.
+El | Esto se llama autocompletado y puede ser bastante útil cuando tiene muchas variables en su espacio de trabajo. Dar
+El | Es un intento. (Si la finalización automática no funciona para usted, simplemente escriba my_div y presione Entrar).
+
+> my_div
+[1] 3.478505 3.181981 2.146460
+
+El | ¡Sigue trabajando así y llegarás allí!
+
+  | ================================================= ================================================== ======= | 100%
