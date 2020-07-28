@@ -1,0 +1,329 @@
+El | El | 0%
+
+El | La estructura de datos más simple y más común en R es el vector.
+
+...
+
+  | == | 3%
+El | Los vectores vienen en dos sabores diferentes: vectores atómicos y listas. Un vector atómico contiene exactamente un tipo de datos, mientras que una lista puede contener múltiples tipos de datos. Exploraremos más los vectores atómicos antes de llegar a las listas.
+
+...
+
+  | ===== | 5%
+El | En lecciones anteriores, tratamos completamente con vectores numéricos, que son un tipo de vector atómico. Otros tipos de vectores atómicos incluyen lógico, de caracteres, entero y complejo. En esta lección, veremos más de cerca
+El | vectores lógicos y de caracteres.
+
+...
+
+  | ======= | 8%
+El | Los vectores lógicos pueden contener los valores VERDADERO, FALSO y NA (para 'no disponible'). Estos valores se generan como resultado de 'condiciones' lógicas. Experimentemos con algunas condiciones simples.
+
+...
+
+  | ========= | 11%
+El | Primero, cree un vector numérico num_vect que contenga los valores 0.5, 55, -10 y 6.
+
+> num_vect <- c (0.5, 55, -10, 6)
+
+El | ¡Estás realmente en racha!
+
+  | =========== | 13%
+El | Ahora, cree una variable llamada tf que obtenga el resultado de num_vect <1, que se lee como 'num_vect es menor
+El | de 1 '.
+
+> tf <- num_vect <1
+
+El | Perseverancia, esa es la respuesta.
+
+  | ============== | dieciséis%
+El | ¿Cómo crees que se verá tf?
+
+1: un vector de 4 valores lógicos
+2: un solo valor lógico
+
+Selección: 2
+
+El | Casi lo tienes, pero no del todo. Inténtalo de nuevo.
+
+El | ¿Recuerdas nuestra lección sobre aritmética vectorial? El tema era que R realiza muchas operaciones en un
+El | elemento por elemento. Llamamos a estas operaciones 'vectorizadas'.
+
+1: un vector de 4 valores lógicos
+2: un solo valor lógico
+
+Selección: 1
+
+El | ¡Eres fabuloso!
+
+  | ================ | 18%
+El | Imprima el contenido de tf ahora.
+
+> tf
+[1] VERDADERO FALSO VERDADERO FALSO
+
+El | ¡Todo ese trabajo duro está dando sus frutos!
+
+  | ================== | 21%
+El | La instrucción num_vect <1 es una condición y tf nos dice si cada elemento correspondiente de nuestro número
+El | El vector num_vect satisface esta condición.
+
+...
+
+  | ===================== | 24%
+El | El primer elemento de num_vect es 0.5, que es menor que 1 y, por lo tanto, la declaración 0.5 <1 es TRUE. los
+El | El segundo elemento de num_vect es 55, que es mayor que 1, por lo que la declaración 55 <1 es FALSO. La misma lógica
+El | aplica para los elementos tercero y cuarto.
+
+...
+
+  | ======================= | 26%
+El | Probemos con otro. Escriba num_vect> = 6 sin asignar el resultado a una nueva variable.
+
+> num_vect> = 6
+[1] FALSO VERDADERO FALSO VERDADERO
+
+El | ¡Eres fabuloso!
+
+  | ========================= | 29%
+El | Esta vez, estamos preguntando si cada elemento individual de num_vect es mayor que OR igual a 6. Dado que
+El | solo 55 y 6 son mayores o iguales a 6, los elementos segundo y cuarto del resultado son VERDADEROS y el
+El | El primer y tercer elementos son FALSOS.
+
+...
+
+  | =========================== | 32%
+El | Los símbolos `<` y `> =` en estos ejemplos se denominan 'operadores lógicos'. Otros operadores lógicos incluyen
+El | `>`, `<=`, `==` para la igualdad exacta y `! =` para la desigualdad.
+
+...
+
+  | ============================== | 34%
+El | Si tenemos dos expresiones lógicas, A y B, podemos preguntar si al menos una es VERDADERA con A | B (lógico
+El | 'o' aka 'union') o si ambos son VERDADEROS con A y B (lógico 'y' aka 'intersección').
+El | Por último,! A es la negación de A y es VERDADERO cuando A es FALSO y viceversa.
+
+...
+
+  | ================================ | 37%
+El | Es una buena idea pasar un tiempo jugando con varias combinaciones de estos operadores lógicos.
+El | hasta que te sientas cómodo con su uso. Haremos algunos ejemplos aquí para que comiences.
+
+...
+
+  | ================================== | 39%
+El | Haga su mejor esfuerzo para predecir el resultado de cada una de las siguientes afirmaciones. Puedes usar lápiz y papel para
+El | resolverlos si es útil. Si te quedas atascado, solo adivina y tienes un 50% de posibilidades de obtener
+El | ¡respuesta correcta!
+
+...
+
+  | ===================================== | 42%
+El | (3> 5) y (4 == 4)
+
+1: VERDADERO
+2: FALSO
+
+Selección: 2
+
+El | ¡Toda esa práctica está dando sus frutos!
+
+  | ======================================= | 45%
+El | (VERDADERO == VERDADERO) | (VERDADERO == FALSO)
+
+1: FALSO
+2: VERDADERO
+
+Selección: 1
+
+El | Inténtalo de nuevo. ¡Hacerlo bien en el primer intento es aburrido de todos modos!
+
+El | Divide este problema en 2 partes. El `|` en el medio indica que AL MENOS UNA de las piezas es
+El | CIERTO. Su trabajo es averiguar si esa es una declaración precisa. Si es así, toda la condición es VERDADERA. Si
+El | no, es FALSO
+
+1: VERDADERO
+2: FALSO
+
+Selección: 1
+
+El | ¡Excelente trabajo!
+
+  | ========================================= | 47%
+El | ((111> = 111) |! (VERDADERO)) y ((4 + 1) == 5)
+
+1: VERDADERO
+2: FALSO
+
+Selección: 1
+
+El | ¡Gran trabajo!
+
+  | ============================================ | 50%
+El | No se preocupe si encuentra que esto es complicado. Se supone que deben ser. Trabajando con declaraciones lógicas en R
+El | requiere práctica, pero sus esfuerzos serán recompensados ​​en lecciones futuras (por ejemplo, subconjunto y control
+El | estructuras).
+
+...
+
+  | ============================================== | 53%
+El | Los vectores de caracteres también son muy comunes en R. Las comillas dobles se usan para distinguir objetos de caracteres, como en
+El | El siguiente ejemplo.
+
+...
+
+  | ================================================ | 55%
+El | Cree un vector de caracteres que contenga las siguientes palabras: "Mi", "nombre", "es". Recuerde encerrar cada
+El | palabra en su propio conjunto de comillas dobles, para que R sepa que son cadenas de caracteres. Almacenar el vector en un
+El | variable llamada my_char.
+
+> my_char <- c ("Mi", "nombre", "es")
+
+El | ¡Mantener el buen trabajo!
+
+  | ================================================= = | 58%
+El | Imprima el contenido de my_char para ver cómo se ve.
+
+> my_char
+[1] "Mi" "nombre" "es"  
+
+El | ¡Sigue trabajando así y llegarás allí!
+
+  | ================================================= ==== | 61%
+El | En este momento, my_char es un vector de caracteres de longitud 3. Digamos que queremos unir los elementos de my_char
+El | juntos en una cadena de caracteres continua (es decir, un vector de caracteres de longitud 1). Podemos hacer esto usando
+El | la función pegar ().
+
+...
+
+  | ================================================= ====== | 63%
+El | Escriba pegar (my_char, collapse = "") ahora. Asegúrese de que haya un espacio entre las comillas dobles en el
+El | argumento de "colapso". Verás por qué en un segundo.
+
+> pegar (my_char, collapse = "")
+[1] "Mi nombre es"
+
+El | ¡Gran trabajo!
+
+  | ================================================= ======== | 66%
+El | El argumento `collapse` de la función paste () le dice a R que cuando unimos los elementos de
+El | vector de caracteres my_char, nos gustaría separarlos con espacios individuales.
+
+...
+
+  | ================================================= =========== | 68%
+El | Parece que nos falta algo ... ¡Ah, sí! ¡Tu nombre!
+
+...
+
+  | ================================================= ============= | 71%
+El | Para agregar (o 'concatenar') su nombre al final de my_char, use la función c () de esta manera: c (my_char,
+El | "tu nombre aquí"). Coloque su nombre entre comillas dobles donde he puesto "su_nombre_aquí". Pruébalo ahora, almacenando
+El | el resultado en una nueva variable llamada my_name.
+
+> my_name <- c (my_char, "Juan Menjura")
+
+El | ¡Sigue trabajando así y llegarás allí!
+
+  | ================================================= =============== | 74%
+El | Echa un vistazo a los contenidos de mi_nombre.
+
+> mi_nombre
+[1] "Mi" "nombre" "es" "Juan Menjura"
+
+El | ¡Gran trabajo!
+
+  | ================================================= ================= | 76%
+El | Ahora, use la función paste () una vez más para unir las palabras en my_name en un solo carácter
+El | cuerda. ¡No olvides decir collapse = ""!
+
+> pegar (my_name, collapse = ".")
+[1] "Mi.nombre.es.Juan Menjura"
+
+El | ¡No exactamente! Inténtalo de nuevo. O escriba info () para más opciones.
+
+El | Use paste (my_name, collapse = "") para unir las cuatro palabras, separadas por espacios individuales.
+
+> pegar (my_name, collapse = "")
+[1] "Mi nombre es Juan Menjura"
+
+El | ¡Gran trabajo!
+
+  | ================================================= ==================== | 79%
+El | En este ejemplo, utilizamos la función paste () para contraer los elementos de un vector de un solo carácter.
+El | paste () también se puede usar para unir los elementos de vectores de caracteres múltiples.
+
+...
+
+  | ================================================= ====================== | 82%
+El | En el caso más simple, podemos unir dos vectores de caracteres que son cada uno de longitud 1 (es decir, unir dos palabras).
+El | Intente pegar ("Hola", "mundo!", Sep = ""), donde el argumento `sep` le dice a R que queremos separar el
+El | elementos unidos con un solo espacio.
+
+> pegar ("Hola", "mundo!", sep = "")
+[1] "¡Helloworld!"
+
+El | ¡Sigue intentándolo! O escriba info () para más opciones.
+
+El | Ingrese pegar ("Hola", "mundo!", Sep = "") para unir las dos palabras "Hola" y "mundo", separadas por una sola
+El | espacio. Debe haber un espacio simple entre las comillas dobles en el argumento `sep` para pegar ()
+El | función.
+
+> pegar ("Hola", "mundo!", sep = "")
+[1] "¡Hola mundo!"
+
+El | Eres bastante bueno mi amigo!
+
+  | ================================================= ======================== | 84%
+El | Para un ejemplo un poco más complicado, podemos unir dos vectores, cada uno de longitud 3. Use paste () para unir el
+El | vector entero 1: 3 con el vector de caracteres c ("X", "Y", "Z"). Esta vez, usa sep = "" para no dejar espacio
+El | entre los elementos unidos.
+
+> pegar (c ("X", "Y", "Z"), sep = "")
+[1] "X" "Y" "Z"
+
+El | Inténtalo de nuevo. ¡Hacerlo bien en el primer intento es aburrido de todos modos! O escriba info () para más opciones.
+
+El | Use paste (1: 3, c ("X", "Y", "Z"), sep = "") para ver qué sucede cuando unimos dos vectores de igual longitud
+El | usando pegar ().
+
+> pegar (1: 3, c ("X", "Y", "Z"), sep = "")
+[1] "1X" "2Y" "3Z"
+
+El | ¡Gran trabajo!
+
+  | ================================================= =========================== | 87%
+El | ¿Qué crees que pasará si nuestros vectores son de diferente longitud? (Sugerencia: hablamos de esto en un
+El | leccion previa.)
+
+...
+
+  | ================================================= ============================= | 89%
+El | Vector de reciclaje! Intente pegar (LETRAS, 1: 4, sep = "-"), donde LETRAS es una variable predefinida en R
+El | que contiene un vector de caracteres de las 26 letras del alfabeto inglés.
+
+> 
+> pegar (CARTAS, 1: 4, sep = "-")
+ [1] "A-1" "B-2" "C-3" "D-4" "E-1" "F-2" "G-3" "H-4" "I-1" "J -2 "" K-3 "" L-4 "" M-1 "" N-2 "" O-3 "" P-4 "" Q-1 "
+[18] "R-2" "S-3" "T-4" "U-1" "V-2" "W-3" "X-4" "Y-1" "Z-2"
+
+El | ¡Buen trabajo!
+
+  | ================================================= =============================== | 92%
+El | Como el vector de caracteres LETRAS es más largo que el vector numérico 1: 4, R simplemente recicla o repite,
+El | 1: 4 hasta que coincida con la longitud de LETRAS.
+
+...
+
+  | ================================================= ================================= | 95%
+El | También vale la pena señalar que el vector numérico 1: 4 se 'coacciona' en un vector de caracteres mediante el pegado ()
+El | función.
+
+...
+
+  | ================================================= ==================================== | 97%
+El | Discutiremos la coerción en otra lección, pero todo lo que realmente significa es que los números 1, 2, 3 y 4 en el
+El | los resultados anteriores ya no son números para R, sino caracteres "1", "2", "3" y "4".
+
+...
+
+  | ================================================= ====================================== | 100%
