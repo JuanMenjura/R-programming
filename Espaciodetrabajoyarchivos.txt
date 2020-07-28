@@ -1,0 +1,334 @@
+El | El | 0%
+
+El | En esta lección, aprenderá cómo examinar su espacio de trabajo local en R y comenzar a explorar la relación.
+El | entre su espacio de trabajo y el sistema de archivos de su máquina.
+
+...
+
+  | === | 3%
+El | Debido a que los diferentes sistemas operativos tienen diferentes convenciones con respecto a cosas como rutas de archivos, el
+El | Las salidas de estos comandos pueden variar de una máquina a otra.
+
+...
+
+  | ===== | 5%
+El | Sin embargo, es importante tener en cuenta que R proporciona una API común (un conjunto común de comandos) para interactuar con
+El | archivos, de esa manera su código funcionará en diferentes tipos de computadoras.
+
+...
+
+  | ======== | 8%
+El | ¡Entremos para que puedas tener una idea de cómo funcionan estas funciones especiales!
+
+...
+
+  | ========== | 10%
+El | Determine qué directorio usa su sesión R como su directorio de trabajo actual usando getwd ().
+
+> 
+> getwd ()
+[1] "C: / Usuarios / 57320 / Documentos / R / Rprogramación"
+
+El | ¡Eso es correcto!
+
+  | ============= | 13%
+El | Liste todos los objetos en su espacio de trabajo local usando ls ().
+
+> ls ()
+[1] "my_div" "my_sqrt" "x" "y" "z"      
+
+El | ¡Gran trabajo!
+
+  | =============== | 15%
+El | Algunos comandos R son los mismos que sus comandos equivalentes en Linux o en una Mac. Linux y Mac
+El | Los sistemas operativos se basan en un sistema operativo llamado Unix. Siempre es una buena idea aprender más sobre
+El | Unix!
+
+...
+
+  | ================== | 18%
+El | Asigne 9 a x usando x <- 9.
+
+> x <- 9
+
+El | ¡Tu dedicación es inspiradora!
+
+  | ===================== | 21%
+El | Ahora eche un vistazo a los objetos que están en su espacio de trabajo usando ls ().
+
+> es ()
+Error en is (): el argumento "objeto" está ausente, sin valor por omisión
+> ls ()
+[1] "my_div" "my_sqrt" "x" "y" "z"      
+
+El | ¡Lo tienes!
+
+  | ======================= | 23%
+El | Liste todos los archivos en su directorio de trabajo usando list.files () o dir ().
+
+> dir ()
+[1] "Rprograming.Rproj"
+
+El | ¡Sigue trabajando así y llegarás allí!
+
+  | ========================== | 26%
+El | A medida que avanzamos en esta lección, debe examinar la página de ayuda para cada nueva función. Revisar la
+El | página de ayuda para list.files con el comando? list.files.
+
+> 
+>? list.files
+
+El | Eres bastante bueno mi amigo!
+
+  | ============================ | 28%
+El | Una de las partes más útiles de cualquier archivo de ayuda de R es la sección Vea también. Lea esa sección para list.files.
+El | Algunas de estas funciones pueden usarse en partes posteriores de esta lección.
+
+...
+
+  | =============================== | 31%
+El | Usar la función args () en el nombre de una función también es una forma práctica de ver qué argumentos puede tomar una función.
+
+... args ()
+
+  | ================================= | 33%
+El | Use la función args () para determinar los argumentos para list.files ().
+
+> args (list.files)
+function (ruta = ".", patrón = NULL, all.files = FALSE, 
+    full.names = FALSE, recursivo = FALSE, ignore.case = FALSE, 
+    include.dirs = FALSE, no .. = FALSE) 
+NULO
+
+El | ¡Gran trabajo!
+
+  | ==================================== | 36%
+El | Asigne el valor del directorio de trabajo actual a una variable llamada "old.dir".
+
+> old.dir <- args (list.files)
+
+El | Esa no es la respuesta que estaba buscando, pero intente nuevamente. O escriba info () para más opciones.
+
+El | Escriba old.dir <- getwd () para asignar el valor del directorio de trabajo actual a una variable llamada
+El | "old.dir".
+
+> old.dir <- getwd ()
+
+El | ¡Buen trabajo!
+
+  | ====================================== | 38%
+El | Usaremos old.dir al final de esta lección para regresar al lugar donde comenzamos. Mucha consulta
+El | funciones como getwd () tienen la propiedad útil de que devuelven la respuesta a la pregunta como resultado de
+El | la función.
+
+...
+
+  | ========================================= | 41%
+El | Use dir.create () para crear un directorio en el directorio de trabajo actual llamado "testdir".
+
+> dir.create ("testdir")
+
+El | ¡Lo lograste! ¡Buen trabajo!
+
+  | ============================================ | 44%
+El | Haremos todo nuestro trabajo en este nuevo directorio y luego lo eliminaremos una vez que hayamos terminado. Este es el R análogo a
+El | "Toma solo fotos, deja solo huellas".
+
+...
+
+  | ============================================== | 46%
+El | Establezca su directorio de trabajo en "testdir" con el comando setwd ().
+
+> setwd ("testdir")
+
+El | ¡Mantener el buen trabajo!
+
+  | ================================================= El | 49%
+El | En general, querrá que su directorio de trabajo sea sensible, tal vez creado para el directorio específico
+El | proyecto en el que estás trabajando. De hecho, organizar su trabajo en paquetes R usando RStudio es un excelente
+El | opción. Echa un vistazo a RStudio en http://www.rstudio.com/
+
+...
+
+  | ================================================= == | 51%
+El | Cree un archivo en su directorio de trabajo llamado "mytest.R" utilizando la función file.create ().
+
+> file.create ("mytest.R")
+[1] VERDADERO
+
+El | Perseverancia, esa es la respuesta.
+
+  | ================================================= ===== | 54%
+El | Este debería ser el único archivo en este directorio recién creado. Verifiquemos esto enumerando todos los archivos en
+El | El directorio actual.
+
+> 
+> ls ()
+[1] "my_div" "my_sqrt" "old.dir" "x" "y" "z"      
+
+El | ¡Casi! Inténtalo de nuevo. O escriba info () para más opciones.
+
+El | list.files () muestra que el directorio solo contiene mytest.R.
+
+> list.files ()
+[1] "mytest.R"
+
+El | Esa es la respuesta que estaba buscando.
+
+  | ================================================= ======= | 56%
+El | Verifique si "mytest.R" existe en el directorio de trabajo utilizando la función file.exists ().
+
+> file.exists ("mytest.R")
+[1] VERDADERO
+
+El | ¡Mantener el buen trabajo!
+
+  | ================================================= ========== | 59%
+El | Este tipo de funciones son excesivas para el uso interactivo. Pero, si está ejecutando un programa que repite
+El | a través de una serie de archivos y realiza algún procesamiento en cada uno, querrá verificar que cada uno
+El | existe antes de intentar procesarlo.
+
+...
+
+  | ================================================= ============= | 62%
+El | Acceda a información sobre el archivo "mytest.R" utilizando file.info ().
+
+> file.info ("mytest.R")
+         tamaño isdir modo mtime ctime atime exe
+mytest.R 0 FALSO 666 2020-07-23 09:39:22 2020-07-23 09:39:22 2020-07-23 09:39:22 no
+
+El | Lo entendiste bien!
+
+  | ================================================= =============== | 64%
+El | Puede usar el operador $ --- por ejemplo, file.info ("mytest.R") $ mode --- para obtener elementos específicos.
+
+...
+
+  | ================================================= ================== | 67%
+El | Cambie el nombre del archivo "mytest.R" a "mytest2.R" utilizando file.rename ().
+
+> file.rename ("mytest.R", "mytest2.R")
+[1] VERDADERO
+
+El | ¡Estás realmente en racha!
+
+  | ================================================= ==================== | 69%
+El | Su sistema operativo proporcionará herramientas más simples para este tipo de tareas, pero con la capacidad de
+El | manipular archivos programáticamente es útil. Ahora puede intentar eliminar mytest.R usando
+El | file.remove ('mytest.R'), pero eso no funcionará ya que mytest.R ya no existe. Ya lo has renombrado.
+
+...
+
+  | ================================================= ======================= | 72%
+El | Haga una copia de "mytest2.R" llamada "mytest3.R" usando file.copy ().
+
+> file.copy ("mytest2.R")
+Error en file.copy ("mytest2.R"): 
+  el argumento "to" está ausente, sin valor por omisión
+> file.copy ("mytest2.R", "mytest3.R")
+[1] VERDADERO
+
+El | Perseverancia, esa es la respuesta.
+
+  | ================================================= ========================= | 74%
+El | Ahora tiene dos archivos en el directorio actual. Eso puede no parecer muy interesante. Pero que tal si fueras
+El | trabajando con docenas o millones de archivos individuales? En ese caso, ser capaz de actuar programáticamente
+El | muchos archivos serían absolutamente necesarios. No olvides que puedes dejar la lección temporalmente
+El | escribiendo play () y luego regresando escribiendo nxt ().
+
+...
+
+  | ================================================= ============================ | 77%
+El | Proporcione la ruta relativa al archivo "mytest3.R" utilizando file.path ().
+
+> file.path ("mytest3.R")
+[1] "mytest3.R"
+
+El | ¡Todo ese trabajo duro está dando sus frutos!
+
+  | ================================================= ============================== | 79%
+El | Puede usar file.path para construir rutas de archivos y directorios que sean independientes del sistema operativo
+El | su código R se está ejecutando. Pase 'folder1' y 'folder2' como argumentos a file.path para hacer un
+El | nombre de ruta independiente de la plataforma.
+
+> file.path ("carpeta1", "carpeta2")
+[1] "carpeta1 / carpeta2"
+
+El | ¡Toda esa práctica está dando sus frutos!
+
+  | ================================================= ================================= | 82%
+El | Eche un vistazo a la documentación de dir.create ingresando? Dir.create. Observe el argumento 'recursivo'.
+El | Para crear directorios anidados, 'recursivo' debe establecerse en VERDADERO.
+
+> dir.create ()
+Error en dir.create (): 
+  el argumento "camino" está ausente, sin valor por omisión
+> dir.create ("recursivo")
+
+El | Inténtalo de nuevo. ¡Hacerlo bien en el primer intento es aburrido de todos modos! O escriba info () para más opciones.
+
+El | ? dir.create te mostrará los documentos.
+
+>? dir.create
+
+El | Eres bastante bueno mi amigo!
+
+  | ================================================= ==================================== | 85%
+El | Cree un directorio en el directorio de trabajo actual llamado "testdir2" y un subdirectorio para él llamado
+El | "testdir3", todo en un comando usando dir.create () y file.path ().
+
+> dir.create ("testdir2", file.path ("testdir3"))
+
+El | Pruébalo de nuevo. O escriba info () para más opciones.
+
+El | dir.create (file.path ('testdir2', 'testdir3'), recursive = TRUE) hará el truco. Si olvidaste el
+El | argumento recursivo, puede parecer que el comando funcionó, pero no creó el directorio anidado.
+
+> dir.create (file.path ("testdir2", "testdir3"))
+
+El | Casi lo tienes, pero no del todo. Inténtalo de nuevo. O escriba info () para más opciones.
+
+El | dir.create (file.path ('testdir2', 'testdir3'), recursive = TRUE) hará el truco. Si olvidaste el
+El | argumento recursivo, puede parecer que el comando funcionó, pero no creó el directorio anidado.
+
+> dir.create (file.path ("testdir2", "testdir3"), recursivo = VERDADERO)
+Mensaje de advertencia:
+En dir.create (file.path ("testdir2", "testdir3"), recursivo = TRUE):
+  'testdir2 \ testdir3' ya existe
+
+El | Eres bastante bueno mi amigo!
+
+  | ================================================= ====================================== | 87%
+El | Regrese a su directorio de trabajo original usando setwd (). (Recuerde que creamos la variable old.dir con
+El | la ruta completa para el directorio de trabajo original al comienzo de estas preguntas).
+
+> setwd (old.dir)
+
+El | ¡Tu dedicación es inspiradora!
+
+  | ================================================= ========================================= | 90%
+El | A menudo es útil guardar las configuraciones que tenía antes de comenzar un análisis y luego volver a ellas
+El | al final. Este truco se usa a menudo dentro de las funciones; guarda, digamos, la configuración de par () que comenzó
+El | con, desordenar un montón, y luego configurarlos de nuevo a los valores originales al final. Esto no es lo mismo que
+El | lo que hemos hecho aquí, pero parece lo suficientemente similar como para mencionarlo.
+
+...
+
+  | ================================================= =========================================== | 92%
+El | Después de terminar esta lección, elimine el directorio 'testdir' que acaba de dejar (y todo lo que contiene)
+
+...
+
+  | ================================================= ============================================== | 95%
+El | Toma nada más que resultados. No dejes nada más que suposiciones. Eso suena como 'Toma nada más que fotos. Salir
+El | nada más que huellas ". ¡Pero no tiene sentido! Seguramente nuestros lectores pueden encontrar un lema mejor. . .
+
+...
+
+  | ================================================= ================================================ | 97%
+El | En esta lección, aprendió a examinar su espacio de trabajo R y trabajar con el sistema de archivos de su máquina
+El | desde dentro R. ¡Gracias por jugar!
+
+...
+
+  | ================================================= ================================================== = | 100%
